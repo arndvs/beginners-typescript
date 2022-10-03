@@ -1,6 +1,12 @@
 import { expect, it } from "vitest";
 
-export const getName = (params: { first: string; last: string }) => {
+
+interface params {
+    first: string
+    last?: string
+}
+
+export const getDinner = (params: params) => {
   if (params.last) {
     return `${params.first} ${params.last}`;
   }
@@ -8,18 +14,18 @@ export const getName = (params: { first: string; last: string }) => {
 };
 
 it("Should work with just the first name", () => {
-  const name = getName({
-    first: "Matt",
+  const name = getDinner({
+    first: "Chicken",
   });
 
-  expect(name).toEqual("Matt");
+  expect(name).toEqual("Chicken");
 });
 
 it("Should work with the first and last name", () => {
-  const name = getName({
-    first: "Matt",
-    last: "Pocock",
+  const name = getDinner({
+    first: "Chicken",
+    last: "Pizza",
   });
 
-  expect(name).toEqual("Matt Pocock");
+  expect(name).toEqual("Chicken Pizza");
 });

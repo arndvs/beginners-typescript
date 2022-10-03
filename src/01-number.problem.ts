@@ -1,8 +1,13 @@
 import { expect, it } from "vitest";
 
-export const addTwoNumbers = (a, b) => {
+export const addTwoNumbers = (a: number, b: number) => {
   return a + b;
 };
+
+// or
+
+export const addTwoNumbers2 = (a: number, b: number) => a + b;
+
 
 it("Should add the two numbers together", () => {
   expect(addTwoNumbers(2, 4)).toEqual(6);
