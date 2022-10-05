@@ -3,8 +3,14 @@ import { Equal, Expect } from "./helpers/type-utils";
 
 const guitarists = new Set<string>();
 
+const map = new Map<string, string>();
+
 guitarists.add("Jimi Hendrix");
 guitarists.add("Eric Clapton");
+
+map.set("Jimi Hendrix", "Guitar");
+map.set("Eric Clapton", "Guitar");
+map.set("James Hetfield", "Guitar");
 
 it("Should contain Jimi and Eric", () => {
   expect(guitarists.has("Jimi Hendrix")).toEqual(true);
