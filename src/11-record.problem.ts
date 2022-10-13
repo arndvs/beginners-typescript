@@ -1,7 +1,12 @@
 import { expect, it } from "vitest";
 
+interface Cache {
+    [id: string]: string;
+    }
+
 const createCache = () => {
-  const cache: Record<string, string> = {};
+    const cache: Cache = {};
+//   const cache: Record<string, string> = {};
   // Record is a utlity type
   // when you see index in a type error, it's usually referring to the key of an object
 
